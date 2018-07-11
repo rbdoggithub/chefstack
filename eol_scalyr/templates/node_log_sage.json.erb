@@ -1,0 +1,31 @@
+{
+    api_key: "<%= @api_key%>",
+    server_attributes: {
+        serverHost: "<%= @node_fqdn %>",
+        tier: "production"
+	application: "Sage"
+}
+
+ // Log files to upload to Scalyr.
+    logs: [
+        {
+            path: "/usr/local/jboss/server/sage/log/server.log",
+            attributes: {parser: "accessLog"}
+        },
+        {
+            path: "/usr/local/akamai/imagedirsync.log",
+            attributes: {parser: "accessLog"}
+        },
+        {
+            path: "/etc/httpd/logs/error_log",
+            attributes: {parser: "accessLog"}
+        },
+        {
+            path: "/etc/httpd/logs/access_log",
+            attributes: {parser: "accessLog"}
+        }
+
+    ],
+    monitors: [
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    api_key: "<%= @api_key%>",
+    server_attributes: {
+        serverHost: "<%= @node_fqdn %>",
+        tier: "production"
+	application: "Cegstand"
+}
+
+ // Log files to upload to Scalyr.
+    logs: [
+        {
+            path: "/usr/local/jboss/server/cegstand/log/fullserver.log",
+            attributes: {parser: "accessLog"}
+        },
+        {
+            path: "/etc/httpd/logs/error_log",
+            attributes: {parser: "accessLog"}
+        },
+
+    ],
+    monitors: [
+    ]
+}
