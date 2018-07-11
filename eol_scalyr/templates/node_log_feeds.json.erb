@@ -1,0 +1,31 @@
+{
+    api_key: "<%= @api_key%>",
+    server_attributes: {
+        serverHost: "<%= @node_fqdn %>",
+        tier: "production"
+	application: "Feeds"
+}
+
+ // Log files to upload to Scalyr.
+    logs: [
+        {
+            path: "/opt/tomcat/logs/catalina.out",
+            attributes: {parser: "accessLog"}
+        },
+        {
+            path: "/opt/tomcat/logs/eonlineapp.log",
+            attributes: {parser: "accessLog"}
+        },
+        {
+            path: "/etc/httpd/logs/error_log",
+            attributes: {parser: "accessLog"}
+        },
+        {
+            path: "/etc/httpd/logs/access_log",
+            attributes: {parser: "accessLog"}
+        }
+
+    ],
+    monitors: [
+    ]
+}
