@@ -1,4 +1,4 @@
-#This is a test
+#This is a test to see if another clone is needed
 node[:deploy].each do |app_name, deploy|
 
   script "install_composer" do
